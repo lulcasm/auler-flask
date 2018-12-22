@@ -5,6 +5,7 @@ from flask import Flask, render_template, request, url_for
 from bs4 import BeautifulSoup
 import json
 import requests
+import os
 
 app = Flask(__name__, static_url_path='/static')
 
@@ -73,4 +74,5 @@ def sala(tipo, qualId):
 			updateJson('static/urls.json', [{'id':i, 'tipo':'publico'}])
 
 if __name__ == '__main__':
-	app.run(debug=True)
+	port = int(os.environ.get('PORT', 5000))
+	app.run(port=port, debug=True)
