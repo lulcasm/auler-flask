@@ -72,6 +72,7 @@ def sala(tipo, qualId):
 
 		else:
 			updateJson('static/urls.json', [{'id':i, 'tipo':'publico'}])
+	return 'Fazendo os requests... Acompanhe através /json/urls.json'
 
 if __name__ == '__main__':
 	port = int(os.environ.get('PORT', 5000))
