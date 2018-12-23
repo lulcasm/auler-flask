@@ -49,7 +49,7 @@ def sala(tipo, qualId):
 	
 		url = 'http://player.vimeo.com/video/{}'.format(i)
 	
-		acessar = requests.get(url).content
+		acessar = requests.get(url, stream=True).content
 		getCode = BeautifulSoup(acessar, 'lxml')
 
 		p = getCode.find('p')
